@@ -5,18 +5,23 @@ import { Link, useNavigate } from "react-router-dom";
 const Login = () => {
     const navigate = useNavigate()
     const [username, setUsername] = useState("");
-    const [usernameErr, setUsernameErr] = useState(false);
+    const [Err, setErr] = useState(false);
 
     const [password, setPassword] = useState("");
     const [passwordErr, setPasswordErr] = useState(false);
-    const handleAdd = () => {
-       
+    const handleAdd = async () => {
 
-          
+        await axios.get("http://localhost:12000/people").then((res) => {
+            const datas = res.data;
+            const users = datas.find(user => user.username === username && user.password === password);
+            if(users){
+                navigate('/task')
+            } else {
+                setErr(true);
+            }
+        })
+
     };
-
-    navigate('/task');
-
 
     return (
         <div className="login">
@@ -28,12 +33,13 @@ const Login = () => {
                     <form action="">
                         <fieldset>
                             <legend>Username </legend>
-                            <input type="text" placeholder="Username" autoComplete="off" onChange={(e) => setUsername(e.target.value)} />
+                            <input type="text" placeholder="Username" value={username} autoComplete="off" onChange={(e) => setUsername(e.target.value)} />
                         </fieldset>
                         <fieldset>
                             <legend>Password </legend>
-                            <input onChange={(e) => setPassword(e.target.value)} type="password" />
+                            <input value={password} onChange={(e) => setPassword(e.target.value)} type="password" />
                         </fieldset>
+                        {Err && <p style={{color: "red"}}>Nom d'utilisateur ou mot de passe incorrect!</p>}
                     </form>
                 </div>
                 <span>bar</span>

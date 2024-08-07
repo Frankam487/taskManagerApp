@@ -25,7 +25,7 @@ const Registration = () => {
             });
             alert("Enregistrement reussit!!");
             setTimeout(() => {
-                alert("Veuillez vous connecter maintenant...")
+                alert('Veuillez vous enregistrer');
             }, 1000);
             navigate('/login');
         }
