@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Login from "./pages/Login";
 import Registration from "./pages/Registration";
+import Task from "./pages/Task";
 
 const App = () => {
     return (
@@ -9,6 +10,7 @@ const App = () => {
                 <Routes>
                     <Route path="/" element={<Login />} />
                     <Route path="/registration" element={<Registration />} />
+                    <Route path="/task" element={<Task/>}/>
                     <Route path="*" element={<Login />} />
                 </Routes>
             </BrowserRouter>

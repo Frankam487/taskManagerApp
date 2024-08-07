@@ -11,16 +11,24 @@ const Registration = () => {
     const [confirmPass, setConfirmPass] = useState(false);
     const handleSubmit = (e) => {
         e.preventDefault();
-        if( name === ""){
-        setNameErr(true)
-        } else if (password === ""){
+        if (name === "") {
+            setNameErr(true)
+        } else if (password === "") {
             setpasswordErr(true);
         } else if (password !== passwordConfirm) {
             setConfirmPass(true);
         } else {
-            axios.get("http://localhost:12000/people").then((res) => console.log(res.data))
+            axios.post("http://localhost:12000/people", {
+                id: new Date().getTime(),
+                name,
+                password
+            });
+            alert("Enregistrement reussit!!");
+            setTimeout(() => {
+                alert("Veuillez vous connecter maintenant...")
+            }, 1000);
+            navigate('/login');
         }
-        navigate('/login');
 
     }
     return (
@@ -28,8 +36,8 @@ const Registration = () => {
             <div className="form-container">
                 <form onSubmit={handleSubmit}>
                     <label htmlFor="">Name</label> <br />
-                    <input type="text" autoComplete="off" value={name} style={{border: nameErr ? "1px solid red" : "1px solid black"}} placeholder="Enter your name" onChange={(e) => setName(e.target.value)} />
-                    {nameErr && <p style={{color: "red"}}>Le nom ne doit pas etre vide</p>}
+                    <input type="text" autoComplete="off" value={name} style={{ border: nameErr ? "1px solid red" : "1px solid black" }} placeholder="Enter your name" onChange={(e) => setName(e.target.value)} />
+                    {nameErr && <p style={{ color: "red" }}>Le nom ne doit pas etre vide</p>}
                     <br />
                     <label htmlFor="">Password</label> <br />
                     <input type="password" autoComplete="off" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Enter the password" />
