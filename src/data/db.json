@@ -1,0 +1,10 @@
+{
+    "people": [
+        {
+            "id": 1,
+            "name": "frank",
+            "password": "hacking",
+            "confirmPassword": "hacking"
+        }
+    ]
+}

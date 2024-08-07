@@ -1,6 +1,8 @@
+import axios from "axios";
 import { useState } from "react";
-
+import { useNavigate } from 'react-router-dom';
 const Registration = () => {
+    const navigate = useNavigate();
     const [nameErr, setNameErr] = useState(false);
     const [passwordErr, setpasswordErr] = useState(false);
     const [name, setName] = useState("");
@@ -16,8 +18,9 @@ const Registration = () => {
         } else if (password !== passwordConfirm) {
             setConfirmPass(true);
         } else {
-            console.log('ok');
+            axios.get("http://localhost:12000/people").then((res) => console.log(res.data))
         }
+        navigate('/login');
 
     }
     return (
@@ -25,8 +28,8 @@ const Registration = () => {
             <div className="form-container">
                 <form onSubmit={handleSubmit}>
                     <label htmlFor="">Name</label> <br />
-                    <input type="text" autoComplete="off" value={name} placeholder="Enter your name" onChange={(e) => setName(e.target.value)} />
-                    {nameErr && <p>Le nom ne doit pas etre vide</p>}
+                    <input type="text" autoComplete="off" value={name} style={{border: nameErr ? "1px solid red" : "1px solid black"}} placeholder="Enter your name" onChange={(e) => setName(e.target.value)} />
+                    {nameErr && <p style={{color: "red"}}>Le nom ne doit pas etre vide</p>}
                     <br />
                     <label htmlFor="">Password</label> <br />
                     <input type="password" autoComplete="off" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Enter the password" />
