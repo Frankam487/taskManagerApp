@@ -1,14 +1,16 @@
 {
   "people": [
-    {
-      "id": 1723063533045,
-      "username": "w",
-      "password": "w"
-    },
-    {
-      "id": 1723063770599,
-      "username": "wwww",
-      "password": "wwww"
-    }
-  ]
+
+      {
+          "id": 1723068738063,
+          "name": "frank",
+          "password": "aa"
+        },
+        {
+            "id": 1723069769826,
+            "name": "frank",
+            "password": "ff"
+        }
+    ]
+  
 }

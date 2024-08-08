@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
+
     const navigate = useNavigate()
     const [username, setUsername] = useState("");
     const [Err, setErr] = useState(false);
@@ -13,12 +14,16 @@ const Login = () => {
 
         await axios.get("http://localhost:12000/people").then((res) => {
             const datas = res.data;
-            const users = datas.find(user => user.username === username && user.password === password);
-            if(users){
-                navigate('/task')
+            const users = datas.find(user => user.name === username && user.password === password);
+            if (users) {
+                alert("connexion reussie");
+                navigate('/task');
             } else {
+                setPassword("");
+                setUsername("");
                 setErr(true);
             }
+
         })
 
     };
@@ -37,12 +42,14 @@ const Login = () => {
                         </fieldset>
                         <fieldset>
                             <legend>Password </legend>
-                            <input value={password} onChange={(e) => setPassword(e.target.value)} type="password" />
+                            <input value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password" type="password" />
+
                         </fieldset>
-                        {Err && <p style={{color: "red"}}>Nom d'utilisateur ou mot de passe incorrect!</p>}
+
+                        {Err && <p style={{ color: "red" }}>Nom d'utilisateur ou mot de passe incorrect!</p>}
                     </form>
                 </div>
-                <span>bar</span>
+                <span></span>
                 <button onClick={handleAdd}>SIGN IN</button>
                 <Link to="/registration">DON'T HAVE AND ACCOUNT? SIGN UP NOW</Link>
             </div>

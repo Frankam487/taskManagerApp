@@ -24,6 +24,7 @@ const Registration = () => {
                 password
             });
             alert("Enregistrement reussit!!");
+            setConfirmPass("")
             setTimeout(() => {
                 alert('Veuillez vous enregistrer');
             }, 1000);
