@@ -1,19 +1,20 @@
 import axios from "axios";
 import { useState } from "react";
-import {  useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const CreateTask = () => {
-   const  navigate = useNavigate()
+    const navigate = useNavigate()
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
     const handleSubmit = (e) => {
         e.preventDefault();
-      axios.post("http://localhost:13000/tasks", {
-            id: new Date().getTime(),
+        axios.post("http://localhost:1000/tasks", {
             title,
             description
+        }).then(() => {
+
+            navigate('/task');
         });
-        navigate('/task')
     }
     return (
         <div className="createTask">
