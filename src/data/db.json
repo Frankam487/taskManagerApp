@@ -1,16 +1,19 @@
 {
   "people": [
-
-      {
-          "id": 1723068738063,
-          "name": "frank",
-          "password": "aa"
-        },
-        {
-            "id": 1723069769826,
-            "name": "frank",
-            "password": "ff"
-        }
-    ]
-  
+    {
+      "id": "1723068738063",
+      "name": "frank",
+      "password": "aa"
+    },
+    {
+      "id": "1723069769826",
+      "name": "frank",
+      "password": "ff"
+    },
+    {
+      "id": 1723144231676,
+      "name": "paul",
+      "password": "paul237"
+    }
+  ]
 }

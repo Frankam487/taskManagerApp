@@ -7,9 +7,8 @@ const Login = () => {
     const navigate = useNavigate()
     const [username, setUsername] = useState("");
     const [Err, setErr] = useState(false);
-
     const [password, setPassword] = useState("");
-    const [passwordErr, setPasswordErr] = useState(false);
+    
     const handleAdd = async () => {
 
         await axios.get("http://localhost:12000/people").then((res) => {

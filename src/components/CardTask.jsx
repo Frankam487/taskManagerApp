@@ -1,34 +1,11 @@
 import axios from "axios";
+import { useState } from "react";
 
 const CardTask = ({ task }) => {
-
     const handleDelete = (id) => {
          axios.delete(`http://localhost:1000/tasks/${id}`)
         window.location.reload();
     }
-
-    // const handleDelete = (id) => {
-    //     axios.delete(`http://localhost:1000/tasks/${id}`)
-    //         .then((res) => {
-    //             window.location.reload();
-
-    //         })
-    //         .catch(error => {
-    //             if (error.res) {
-
-    //                 if (error.res.status === 404) {
-    //                     console.error('Erreur 404 : Ressource non trouvée. Vérifiez l\'ID fourni.');
-    //                 } else {
-    //                     console.error('Erreur lors de la suppression :', error.res.data);
-    //                     console.error('Statut de l\'erreur :', error.res.status);
-    //                 }
-    //             } else if (error.request) {
-    //                 console.error('Aucune réponse reçue du serveur :', error.request);
-    //             } else {
-    //                 console.error('Erreur :', error.message);
-    //             }
-    //         });
-    // };
 
     return (
 
@@ -40,7 +17,7 @@ const CardTask = ({ task }) => {
                     handleDelete(task.id)
                 }
             }
-            }>DEL</button>
+            }>Delete</button>
         </div>
     );
 
