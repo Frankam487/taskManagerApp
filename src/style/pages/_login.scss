@@ -7,6 +7,18 @@
         padding: 20px 20px;
         background-color: hsla(0, 0%, 100%, .4);
 
+        @media (max-width: 624px) {
+            .head {
+                align-items: center;
+                display: flex;
+                flex-direction: column;
+
+                h5 {
+                    text-align: center;
+                }
+            }
+        }
+
         .head {
             text-align: left;
 
@@ -39,6 +51,12 @@
                     text-align: left;
                     margin-left: 30px;
 
+                    @media (max-width: 624px) {
+                        font-size: 1rem;
+                        margin-left: 12px;
+
+                    }
+
                 }
 
                 input {
@@ -50,13 +68,25 @@
                         color: rgb(115, 138, 138);
                         font-size: 1.1rem;
                         font-weight: 500;
+
+                        @media (max-width: 624px) {
+                            font-size: .8rem;
+
+                        }
                     }
 
                     &:focus {
                         border: none;
                         outline: none;
                     }
+
+                    @media (max-width: 624px) {
+                        padding: 5px;
+                        align-items: center;
+
+                    }
                 }
+
             }
         }
 
@@ -74,7 +104,6 @@
                 padding: 12px 0;
                 background: rgb(79, 79, 226);
                 border: none;
-                // margin: 0 20px;
                 border-radius: 3px;
                 color: #fff;
             }

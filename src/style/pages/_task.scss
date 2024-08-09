@@ -1,19 +1,33 @@
-.task{
-    width: 40%;
+.task {
+    width: 60%;
     margin: 160px auto;
     border-radius: 12px;
     padding: 20px 20px;
     background: cyan;
-    .left-part{
-        
-    }
-    .header{
-        display: grid;
-        grid-template-columns: 50% 50%;
-        // background: rgb(0, 0, 0);
 
+    .left-part {}
+
+    .header {
+        align-items: center;
+        display: grid;
+        justify-content: space-between;
+        grid-template-columns: 50% 50%;
+
+        span {
+            text-align: right;
+            margin: 0 22px 0 10px;
+        }
+
+        .btnLink {
+            text-align: center;
+            margin: 20px 20px;
+            background-color: red;
+            align-items: center;
+            display: flex;
+        }
     }
-    .card{
+
+    .card {
         background-color: hsla(0, 10%, 100%, 0.897);
     }
 }

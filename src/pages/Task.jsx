@@ -19,9 +19,11 @@ const Task = () => {
             <div className="header">
                 <h2>Get things done.</h2>
 
-                <Link to='/createTask'>+ CREATE TASK</Link>
-                <button onClick={handleClick}>-*</button>
-                {/* <span></span> */}
+                <div className="btnLink">
+                    <Link to='/createTask'>+ CREATE TASK</Link>
+                    <span onClick={handleClick}>-*</span>
+                </div>
+                <span></span>
 
             </div>
             <div className="searchInput">
