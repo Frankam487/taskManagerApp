@@ -1,0 +1,19 @@
+.task{
+    width: 40%;
+    margin: 160px auto;
+    border-radius: 12px;
+    padding: 20px 20px;
+    background: cyan;
+    .left-part{
+        
+    }
+    .header{
+        display: grid;
+        grid-template-columns: 50% 50%;
+        // background: rgb(0, 0, 0);
+
+    }
+    .card{
+        background-color: hsla(0, 10%, 100%, 0.897);
+    }
+}
