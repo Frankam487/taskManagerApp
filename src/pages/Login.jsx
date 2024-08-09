@@ -8,7 +8,7 @@ const Login = () => {
     const [username, setUsername] = useState("");
     const [Err, setErr] = useState(false);
     const [password, setPassword] = useState("");
-    
+
     const handleAdd = async () => {
 
         await axios.get("http://localhost:12000/people").then((res) => {
@@ -30,11 +30,14 @@ const Login = () => {
     return (
         <div className="login">
             <div className="login-container">
-               <div className="head">
-               <h1>Hello!</h1>
-               <h5>Fil in your username and your password to sign in</h5>
-               </div>
-                <span>Error</span>
+                <div className="head">
+                    <h1>Hello!</h1>
+                    <h5>Fil in your username and your password to sign in</h5>
+                </div>
+                {Err && <div className={Err ? "error" : ""}>
+                    <h4>Oops!</h4>
+                    <p>Nom d'utilisateur ou mot de passe incorrect !!</p>
+                </div>}
                 <div className="form-container">
                     <form action="" autoComplete="off">
                         <fieldset>
@@ -47,14 +50,13 @@ const Login = () => {
 
                         </fieldset>
 
-                        {Err && <p style={{ color: "red" }}>Nom d'utilisateur ou mot de passe incorrect!</p>}
                     </form>
                 </div>
                 <span></span>
-               <div className="login-btns">
-               <button onClick={handleAdd}>SIGN IN</button>
-               <Link to="/registration">DON'T HAVE AND ACCOUNT? SIGN UP NOW</Link>
-               </div>
+                <div className="login-btns">
+                    <button onClick={handleAdd}>SIGN IN</button>
+                    <Link to="/registration">DON'T HAVE AND ACCOUNT? SIGN UP NOW</Link>
+                </div>
             </div>
         </div>
     );

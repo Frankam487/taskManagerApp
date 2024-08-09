@@ -1,11 +1,41 @@
 .login {
 
     .login-container {
+        .error {
+
+            background: rgba(243, 160, 160, 0.637);
+            padding: 5px 12px;
+            color: red;
+            font-weight: 200;
+            opacity: 1;
+            // transform: translateX(-300px, 0px);
+            transition: .9s ease-in-out; 
+            
+            &:visible{
+                opacity: 1;
+
+            }
+            h4, p{
+                margin: 12px 0;
+            }
+            .err{
+                background: rgba(243, 160, 160, 0.637);
+                padding: 5px 12px;
+                color: red;
+                font-weight: 200;
+                opacity: 1;
+                transform: translateX(0);
+                transition: .7s ease-in-out;
+                opacity: 1;
+            }
+        }
+
         width: 40%;
         margin: 160px auto;
         border-radius: 12px;
         padding: 20px 20px;
         background-color: hsla(0, 0%, 100%, .4);
+
 
         @media (max-width: 624px) {
             .head {
@@ -102,10 +132,17 @@
 
             button {
                 padding: 12px 0;
-                background: rgb(79, 79, 226);
+                background: darken(skyblue, 30%);
                 border: none;
                 border-radius: 3px;
-                color: #fff;
+                color: darken(#fff, 10%);
+                font-weight: 650;
+                cursor: pointer;
+                transition: .6s ease;
+                &:hover{
+                    transform: scale(1.01);
+                    background: darken(skyblue, 50%);
+                }
             }
 
             a {
