@@ -3,15 +3,34 @@
     margin: 160px auto;
     border-radius: 12px;
     padding: 20px 20px;
-    background: cyan;
 
-    .left-part {}
+    .input-container {
+
+        display: flex;
+        justify-content: space-between;
+        margin: 12px auto;
+
+        input,
+        select {
+            padding: 8px 0 8px 7px;
+            border-radius: 5px;
+            border: none;
+            background-color: rgba(255, 255, 255, 0.452);
+
+            select {
+                padding: 2px;
+            }
+
+
+        }
+    }
 
     .header {
+        display: flex;
         align-items: center;
-        display: grid;
+        padding: 1px 0px 3px 3px;
         justify-content: space-between;
-        grid-template-columns: 50% 50%;
+        border-bottom: 3px solid rgb(221, 208, 208);
 
         span {
             text-align: right;
@@ -19,15 +38,28 @@
         }
 
         .btnLink {
-            text-align: center;
-            margin: 20px 20px;
-            background-color: red;
-            align-items: center;
             display: flex;
+            justify-content: space-around;
+            align-items: center;
+
+
+            a {
+                text-decoration: none;
+                background: rgb(255, 255, 255);
+                padding: 5px 12px;
+                border-radius: 20px;
+                margin: 0 10px;
+            }
+
+            button {
+                background: rgba(46, 34, 34, 0.411);
+                color: #fff;
+                padding: 2px 10px;
+                border-radius: 12px;
+                border: none;
+            }
         }
     }
 
-    .card {
-        background-color: hsla(0, 10%, 100%, 0.897);
-    }
+    
 }

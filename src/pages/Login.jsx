@@ -41,7 +41,7 @@ const Login = () => {
                 <div className="form-container">
                     <form action="" autoComplete="off">
                         <fieldset>
-                            <legend>Username </legend>
+                            <legend> Username </legend>
                             <input type="text" placeholder="Username" value={username} autoComplete="off" onChange={(e) => setUsername(e.target.value)} />
                         </fieldset>
                         <fieldset>
@@ -57,6 +57,8 @@ const Login = () => {
                     <button onClick={handleAdd}>SIGN IN</button>
                     <Link to="/registration">DON'T HAVE AND ACCOUNT? SIGN UP NOW</Link>
                 </div>
+            {/* <i className="fab fa-facebook"></i> */}
+            
             </div>
         </div>
     );

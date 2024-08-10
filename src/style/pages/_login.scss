@@ -9,16 +9,19 @@
             font-weight: 200;
             opacity: 1;
             // transform: translateX(-300px, 0px);
-            transition: .9s ease-in-out; 
-            
-            &:visible{
+            transition: .9s ease-in-out;
+
+            &:visible {
                 opacity: 1;
 
             }
-            h4, p{
+
+            h4,
+            p {
                 margin: 12px 0;
             }
-            .err{
+
+            .err {
                 background: rgba(243, 160, 160, 0.637);
                 padding: 5px 12px;
                 color: red;
@@ -66,20 +69,22 @@
             align-items: center;
 
             fieldset {
-                align-items: center;
+                // align-items: center;
                 overflow-x: hidden;
                 width: 100%;
-                border: 1px solid black;
+                border: 1px solid rgba(0, 0, 0, 0.651);
                 background-color: hsla(0, 0%, 98%, 0.938);
-                border-radius: 7px;
+                border-radius: 5px;
                 text-align: center;
+                margin: 8px 0;
+                padding: -2px -2px;
 
                 legend {
                     font-size: 1.2rem;
                     color: #221f1fdc;
-                    font-weight: 900;
+                    font-weight: 300;
                     text-align: left;
-                    margin-left: 30px;
+                    
 
                     @media (max-width: 624px) {
                         font-size: 1rem;
@@ -139,7 +144,8 @@
                 font-weight: 650;
                 cursor: pointer;
                 transition: .6s ease;
-                &:hover{
+
+                &:hover {
                     transform: scale(1.01);
                     background: darken(skyblue, 50%);
                 }

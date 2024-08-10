@@ -21,21 +21,22 @@ const Task = () => {
 
                 <div className="btnLink">
                     <Link to='/createTask'>+ CREATE TASK</Link>
-                    <span onClick={handleClick}>-*</span>
+                    <button onClick={handleClick}>-*</button>
                 </div>
-                <span></span>
-
             </div>
-            <div className="searchInput">
-                <input type="search" placeholder="Search" />
-            </div>
-            <div className="filter">
-                <select value={select} onChange={(e) => setSelect(e.target.value)}>
-                    <option value="">No status filter</option>
-                    <option value="open">Open</option>
-                    <option value="progress">In Progress</option>
-                    <option value="done">Done</option>
-                </select>
+            <span className="bar"></span>
+            <div className="input-container">
+                <div className="searchInput">
+                    <input type="search" placeholder="Search" />
+                </div>
+                <div className="filter">
+                    <select value={select} onChange={(e) => setSelect(e.target.value)}>
+                        <option value="">No status filter</option>
+                        <option value="open">Open</option>
+                        <option value="progress">In Progress</option>
+                        <option value="done">Done</option>
+                    </select>
+                </div>
             </div>
             {
                 tasks
