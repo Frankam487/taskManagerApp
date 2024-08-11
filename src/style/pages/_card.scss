@@ -2,18 +2,49 @@
     margin: 12px auto;
     width: 100%;
 
+    select {
+        padding: 2px;
+        background-color: rgb(233, 180, 180);
+        border-radius: 12px;
+    }
+    h2,
+    p {
+        text-align: left;
+        padding: 0 12px;
+    }
+
+    h2 {
+        font-size: 1.7rem;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: 560;
+        padding: 20px 14px;
+    }
+    p{
+        margin-top: 12px -12px;
+    }
+
     .btn-content {
         display: flex;
         justify-content: space-between;
-        // background: red;
         padding: 14px 12px;
 
-        button {
-            background: rgba(0, 68, 255, 0.5);
+        .edit {
+            background: rgba(121, 139, 187, 0.5);
             padding: 6px;
             border-radius: 12px;
             border: navajowhite;
-            color: rgb(6, 23, 37);
+            color: rgb(0, 0, 0);
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: bold;
+            margin: 1px 12px;
+        }
+
+        .delete {
+            background: rgba(255, 0, 0, 0.897);
+            padding: 6px;
+            border-radius: 12px;
+            border: navajowhite;
+            color: rgb(168, 194, 216);
             font-family: Verdana, Geneva, Tahoma, sans-serif;
             font-weight: bold;
             transition: .4s ease;
