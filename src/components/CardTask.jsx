@@ -34,7 +34,7 @@ const CardTask = ({ task }) => {
         <div className="card">
 
            <div className="head">
-           {edit ? <input type="text" defaultValue={titleEdit ? titleEdit : task.title} onChange={(e) => setTitleEdit(e.target.value)} /> : <h2>{titleEdit ? titleEdit : task.title}</h2>}
+           {edit ? <input type="text" defaultValue={titleEdit ? titleEdit : task.title} onChange={(e) => setTitleEdit(e.target.value)} /> : <h2>{titleEdit ? titleEdit : task.title}</h2> } 
             <em>Poste le {dataParser(task.date)}</em>
            </div>
             {edit ? <textarea defaultValue={textareaEdit ? textareaEdit : task.description} onChange={(e) => setTextareaEdit(e.target.value)}></textarea> : <p>{textareaEdit ? textareaEdit : task.description}</p>}

@@ -5,14 +5,24 @@ import CardTask from "../components/CardTask";
 
 const Task = () => {
     const navigate = useNavigate();
+    const [inputSearch, setInputSearch] = useState("");
     const [tasks, setTask] = useState([]);
     const [select, setSelect] = useState("");
-    const getData = () => {
-        axios.get("http://localhost:1000/tasks/").then((res) => setTask(res.data));
+    const str = () => {
+        const tite = task.title;
+        if(inputSearch.toLocaleLowerCase() === tite.toLocaleLowerCase()){
+console.log('cool');
+        }
     }
-    useEffect(() => getData(), [])
+    const getData = () => {
+        axios.get(`http://localhost:1000/tasks?title=${inputSearch}`).then((res) => setTask(res.data));
+    }
+    useEffect(() => getData(), [inputSearch])
     const handleClick = () => {
         navigate('/')
+    }
+    const inputFunc = (e) => {
+        setInputSearch(e.target.value);
     }
     return (
         <div className="task">
@@ -27,7 +37,7 @@ const Task = () => {
             <span className="bar"></span>
             <div className="input-container">
                 <div className="searchInput">
-                    <input type="search" placeholder="Search" />
+                    <input type="search" defaultValue={inputSearch} onChange={(e) => inputFunc(e)} placeholder="Search" />
                 </div>
                 <div className="filter">
                     <select value={select} onChange={(e) => setSelect(e.target.value)}>

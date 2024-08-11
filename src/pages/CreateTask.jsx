@@ -3,7 +3,8 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const CreateTask = () => {
-    const navigate = useNavigate()
+    const navigate = useNavigate();
+
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
     const handleSubmit = (e) => {
@@ -29,10 +30,7 @@ const CreateTask = () => {
                         <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
                     </fieldset>
                     <br />
-                    <textarea rows={10} cols={76} placeholder="Description" value={description} onChange={(e) => {
-                        setDescription(e.target.value);
-
-                    }}></textarea>
+                    <textarea rows={10} cols={76} placeholder="Description" value={description} onChange={(e) => setDescription(e.target.value)}></textarea>
                     <input type="submit" value="CREATE TASK" />
                 </form>
             </div>
