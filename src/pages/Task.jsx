@@ -40,7 +40,7 @@ const Task = () => {
             </div>
             {
                 tasks
-                    .sort((a, b) => b.title - a.title)
+                    .sort((a, b) => b.date - a.date)
                     .map((task, index) => (
                         <CardTask key={index} task={task} setTask={setTask} />
                     ))

@@ -1,7 +1,18 @@
 .card {
     margin: 12px auto;
     width: 100%;
+.head{
+    display: flex;
+    justify-content: space-between;
 
+    em{
+        margin-top: 20px;
+        padding: 12px 22px;
+        font-size: 1.2rem;
+        color: black;
+        font-weight: 400;
+    }
+}
     select {
         padding: 2px;
         background-color: rgb(233, 180, 180);
