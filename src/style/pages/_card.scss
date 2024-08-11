@@ -5,6 +5,23 @@
     .btn-content {
         display: flex;
         justify-content: space-between;
+        // background: red;
+        padding: 14px 12px;
+
+        button {
+            background: rgba(0, 68, 255, 0.5);
+            padding: 6px;
+            border-radius: 12px;
+            border: navajowhite;
+            color: rgb(6, 23, 37);
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: bold;
+            transition: .4s ease;
+
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
     }
 }
 
