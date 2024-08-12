@@ -13,7 +13,6 @@ const CreateTask = () => {
             title,
             description
         }).then(() => {
-
             navigate('/task');
         });
     }

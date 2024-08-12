@@ -56,14 +56,10 @@ const Task = () => {
                     .sort((a, b) => {
                         if (select === "progress") {
                             return a.title.localeCompare(b.title)
-                        } else if (select === "last") {
-                            return (
-                                [...tasks].sort((a, b) => new Date(b.date) - new Date(a.date))
-                            )
-                        }
+                        } 
                     })
                     .map((task, index) => (
-                        <CardTask key={index} task={task} setTask={setTask} />
+                        <CardTask key={index} task={task} tasks={tasks} setTask={setTask} />
                     ))
             }
         </div>
