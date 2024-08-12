@@ -17,7 +17,6 @@ const CardTask = ({ task }) => {
         axios.put("http://localhost:1000/tasks/" + id, data).then(() => {
             setEdit(false);
         });
-        // window.location.reload();
     }
     const dataParser = () => {
         let dateNow = new Date().toLocaleDateString("fr-FR", {

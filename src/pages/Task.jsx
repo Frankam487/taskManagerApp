@@ -10,8 +10,8 @@ const Task = () => {
     const [select, setSelect] = useState("");
     const str = () => {
         const tite = task.title;
-        if(inputSearch.toLocaleLowerCase() === tite.toLocaleLowerCase()){
-console.log('cool');
+        if (inputSearch.toLocaleLowerCase() === tite.toLocaleLowerCase()) {
+
         }
     }
     const getData = () => {
@@ -40,9 +40,12 @@ console.log('cool');
                     <input type="search" defaultValue={inputSearch} onChange={(e) => inputFunc(e)} placeholder="Search" />
                 </div>
                 <div className="filter">
-                    <select value={select} onChange={(e) => setSelect(e.target.value)}>
+                    <select value={select} onChange={(e) => {
+                        console.log(e.target.value)
+                        setSelect(e.target.value)
+                    }}>
                         <option value="">No status filter</option>
-                        <option value="open">Open</option>
+                        <option value="last">Open</option>
                         <option value="progress">In Progress</option>
                         <option value="done">Done</option>
                     </select>
@@ -50,7 +53,15 @@ console.log('cool');
             </div>
             {
                 tasks
-                    .sort((a, b) => b.date - a.date)
+                    .sort((a, b) => {
+                        if (select === "progress") {
+                            return a.title.localeCompare(b.title)
+                        } else if (select === "last") {
+                            return (
+                                [...tasks].sort((a, b) => new Date(b.date) - new Date(a.date))
+                            )
+                        }
+                    })
                     .map((task, index) => (
                         <CardTask key={index} task={task} setTask={setTask} />
                     ))
