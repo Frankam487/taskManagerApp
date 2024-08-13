@@ -37,7 +37,8 @@ const Task = () => {
             <span className="bar"></span>
             <div className="input-container">
                 <div className="searchInput">
-                    <input type="search" defaultValue={inputSearch} onChange={(e) => inputFunc(e)} placeholder="Search" />
+                    <input type="search" defaultValue={inputSearch} onChange={(e) => inputFunc(e)} placeholder="Search"
+                     />
                 </div>
                 <div className="filter">
                     <select value={select} onChange={(e) => {
