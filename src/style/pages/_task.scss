@@ -10,6 +10,14 @@
         justify-content: space-between;
         margin: 12px auto;
 
+        input {
+            &:focus{
+                border: none;
+                outline: none
+                ;
+            }
+        }
+
         input,
         select {
             padding: 8px 0 8px 7px;

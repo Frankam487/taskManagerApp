@@ -15,8 +15,18 @@
 }
     select {
         padding: 2px;
-        background-color: rgb(233, 180, 180);
-        border-radius: 12px;
+        background-color: rgba(238, 228, 228, 0.664);
+        border-radius: 2px;
+        border: none;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.63);
+        &:focus{
+            border: none;
+            outline: none;
+        }
+        option{
+            font-weight: bold;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
     }
     h2,
     p {

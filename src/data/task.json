@@ -2,7 +2,7 @@
   "tasks": [
     {
       "title": "ecouter de la bonne musique",
-      "description": "faire mes coursesr",
+      "description": "faire mes ",
       "id": "f5f0"
     },
     {
@@ -16,9 +16,9 @@
       "id": "715f"
     },
     {
-      "title": "je vais alller a la maison prendre mes habit",
-      "description": "je vais voir le reste apres bro",
-      "id": "4561"
+      "id": "a171",
+      "title": "Laver mes habits",
+      "description": "trois pentalons, deux haut, un pull"
     }
   ]
 }
