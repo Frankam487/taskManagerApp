@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 
-const CardTask = ({ task }) => {
+const CardTask = ({ task, count }) => {
     const [edit, setEdit] = useState(false);
     const [titleEdit, setTitleEdit] = useState("");
     const [textareaEdit, setTextareaEdit] = useState("");
@@ -35,9 +35,8 @@ const CardTask = ({ task }) => {
     return (
 
         <div className="card">
-
             <div className="head">
-                {edit ? <input type="text" defaultValue={titleEdit ? titleEdit : task.title} onChange={(e) => setTitleEdit(e.target.value)} /> : <h2>{titleEdit ? titleEdit : task.title}</h2>}
+                {edit ? <input type="text" defaultValue={titleEdit ? titleEdit : task.title} onChange={(e) => setTitleEdit(e.target.value)} /> : <h2>{titleEdit ? titleEdit : task.title} </h2>}
                 <em>Poste le {dataParser(task.date)}</em>
             </div>
             {edit ? <textarea defaultValue={textareaEdit ? textareaEdit : task.description} onChange={(e) => setTextareaEdit(e.target.value)}></textarea> : <p>{textareaEdit ? textareaEdit : task.description}</p>}
@@ -49,14 +48,14 @@ const CardTask = ({ task }) => {
                     <option value="">Progress</option>
                 </select>
                 <div className="btn">
-                    {edit ? <button onClick={() => handleEdit(task.id)} className="edit">Valider</button> : <button onClick={() => setEdit(true)} className="edit"
-                    >Edit</button>}
+                    {edit ? <button onClick={() => handleEdit(task.id)} className="edit"> <span className="bi bi-check-circle"></span> </button> : <button onClick={() => setEdit(true)} className="edit"
+                    > <span className="bi bi-pencil"></span> </button>}
                     <button className="delete" onClick={() => {
                         if (window.confirm("Supprimer ?")) {
                             handleDelete(task.id)
                         }
                     }
-                    }>Delete</button>
+                    }> <span className="bi bi-trash"></span> </button>
                 </div>
             </div>
         </div>

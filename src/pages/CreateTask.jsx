@@ -2,7 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const CreateTask = () => {
+const CreateTask = ({ count }) => {
     const navigate = useNavigate();
 
     const [title, setTitle] = useState("");
@@ -16,6 +16,8 @@ const CreateTask = () => {
             navigate('/task');
         });
     }
+    console.log(count);
+    
     return (
         <div className="createTask">
             <h2>Create a new task</h2>
